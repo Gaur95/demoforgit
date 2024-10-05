@@ -1,4 +1,21 @@
 # Docker
+## summary
+```
+docker pull    <image_name>     --> image pull from repo
+docker images ---> show images
+docker run          <image name >    <cmd>  ---> create or run container
+       --name
+  -d (for background)
+       -it   (excute into container during start)
+docker ps ---> to show running container
+docker ps  -a ---> to show all container
+docker start  <container name>  ---> to start stop container
+docker stop   <conatiner_name>  ---> to stop a running container
+docker rm   <container_name> ---> to remove stop container
+docker rm -f  <container_name> ---> to remove running container also
+docker cp  <container_name>:<PATH> ---> to copy file into container
+docker rmi <container_name>  ---> remove  images
+```
 ```
 wget https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
  1983  ls
