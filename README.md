@@ -69,4 +69,17 @@ wget https://www.free-css.com/assets/files/free-css-templates/download/page296/c
  2031  rm -r *
  2032  ls
  2033  vim index.html
+docker ps
+ 2038  docker inspect angry_tesla 
+ 2039  curl 172.17.0.4
+ 2040  ls
+ 2041  docker images
+ 2042  docker tag web2 aakashgaur57/web2
+ 2043  docker images
+ 2044  docker login 
+ 2045  docker push aakashgaur57/web2
+ 2046  history 
+
+
+
 ```
