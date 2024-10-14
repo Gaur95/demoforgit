@@ -83,3 +83,19 @@ docker ps
 
 
 ```
+
+# 14OCT docker
+```
+akash@akash:~$ docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=q123 -e MYSQL_DATABASE=demo -e MYSQL_USER=akash -e MYSQL_PASSWORD=q123 -p 2233:3306 mysql
++ **akash@akash:~$** docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                                  NAMES
+96bf3c44da9e   mysql     "docker-entrypoint.s…"   4 seconds ago    Up 3 seconds    33060/tcp, 0.0.0.0:2233->3306/tcp, :::2233->3306/tcp   mysql
++ **akash@akash:~$** mysql -h 127.0.0.1 -u akash -p -P 2233
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/o
+
+```
