@@ -105,3 +105,34 @@ Copyright (c) 2000, 2024, Oracle and/o
 docker run -d --name wordpress3 -e WORDPRESS_DB_HOST=192.168.1.73:2233 -e WORDPRESS_DB_USER=akash -e WORDPRESS_DB_PASSWORD=q123 -e WORDPRESS_DB_NAME=demo -p 6688:80   wordpress
 
 ```
+### docker compose
+```
+version: '3.3'
+services:
+  mysql:
+    image: mysql 
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: q123
+      MYSQL_DATABASE: demo
+      MYSQL_USER: akash
+      MYSQL_PASSWORD: q123
+    ports:
+      - 2244:3306
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: akash
+      WORDPRESS_DB_PASSWORD: q123
+      WORDPRESS_DB_NAME: demo
+    ports:
+      - 8888:80
+
+```
+### docker compose cmd
+```
+docker-compose up -d
+docker-compose down
+```
