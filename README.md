@@ -99,3 +99,9 @@ Server version: 9.0.1 MySQL Community Server - GPL
 Copyright (c) 2000, 2024, Oracle and/o
 
 ```
+
+### wordpress
+```
+docker run -d --name wordpress3 -e WORDPRESS_DB_HOST=192.168.1.73:2233 -e WORDPRESS_DB_USER=akash -e WORDPRESS_DB_PASSWORD=q123 -e WORDPRESS_DB_NAME=demo -p 6688:80   wordpress
+
+```
