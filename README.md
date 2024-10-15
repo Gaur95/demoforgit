@@ -1,6 +1,6 @@
 # Kubernetes
-<img src=jecrck8sintro1>
-<img src=jecrck8sintro2>
+<img src=jecrck8sintro1.jpg>
+<img src=jecrck8sintro2.jpg>
 
 ```
 akash@akash:~$ kubectl get node
