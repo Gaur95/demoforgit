@@ -54,11 +54,12 @@ kind: Pod
 metadata:
  name: pripod
 spec:
-  imagePullSecret:
-    name: mycred
+  imagePullSecrets:
+    - name: mycred
   containers:
     - name: pric
       image: aakashgaur57/web2
       ports:
       - containerPort: 80
+
 ```
