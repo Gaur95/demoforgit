@@ -63,3 +63,10 @@ spec:
       - containerPort: 80
 
 ```
+```
+akash@akash:~/Desktop/kubernetes$ kubectl apply -f privatepod.yaml 
+pod/pripod created
+akash@akash:~/Desktop/kubernetes$ kubectl get pod
+NAME     READY   STATUS    RESTARTS   AGE
+pripod   1/1     Running   0          62s
+```
