@@ -36,3 +36,29 @@ akash@akash:~/Desktop/kubernetes$ kubectl delete pod akpod
 pod "akpod" deleted
 
 ```
+### to create secret 
+```
+kubectl create secret docker-registry mycred --docker-username demo  --docker-password 123
+```
+### replace your user name and password
+```
+akash@akash:~/Desktop/kubernetes$ kubectl get secret
+NAME     TYPE                             DATA   AGE
+mycred   kubernetes.io/dockerconfigjson   1      14m
+```
+
+### private pod yaml 
+```
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pripod
+spec:
+  imagePullSecret:
+    name: mycred
+  containers:
+    - name: pric
+      image: aakashgaur57/web2
+      ports:
+      - containerPort: 80
+```
