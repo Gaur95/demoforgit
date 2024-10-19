@@ -139,6 +139,7 @@ akash@akash:~/Desktop/kubernetes$
 <img src=dep2.png>
 <img src=dep3.png>
 <img src=dep4.png>
+
 ```
 apiVersion: apps/v1
 kind: Deployment
