@@ -134,3 +134,33 @@ akpod    1/1     Running   0          13m   <none>
 pripod   1/1     Running   0          39m   cup=coffee
 akash@akash:~/Desktop/kubernetes$
 ```
+### deployment
+<img src=dep1.png>
+<img src=dep2.png>
+<img src=dep3.png>
+<img src=dep4.png>
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      cup: colddrink
+  template:
+    metadata:
+      labels:
+        cup: colddrink
+    spec:
+      containers:
+      - name: myapp
+        image: httpd
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+```
