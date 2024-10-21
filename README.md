@@ -165,3 +165,55 @@ spec:
         ports:
         - containerPort: 80
 ```
+
+### networking 
+
+<img src=s1.jpg>
+<img src=s2.jpg>
+
+
+### pod with label
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: akpod
+  labels:
+    color: red
+spec:
+  containers:
+  - name: akc
+    image: httpd
+    ports:
+      - containerPort: 80
+```
+
+### nodeport yaml
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysvc
+spec:
+  type: NodePort
+  selector:
+    color: red
+  ports:
+  - port: 1122
+    targetPort: 80
+    nodePort: 30001 
+```
+```
+akash@akash:~/Desktop/kubernetes$ kubectl get service
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          5d23h
+mysvc        NodePort    10.98.150.106   <none>        1122:30001/TCP   3m10s
+akash@akash:~/Desktop/kubernetes$ kubectl get svc
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          5d23h
+mysvc        NodePort    10.98.150.106   <none>        1122:30001/TCP   3m16s
+akash@akash:~/Desktop/kubernetes$ kubectl exec -it akpod -- bash
+```
+### exec into the pod(container)
++ kubectl exec -it akpod -- bash
+<img src=s3.png>
