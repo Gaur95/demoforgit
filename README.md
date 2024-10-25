@@ -1,6 +1,6 @@
 # jenkins
 <img src=j1.jpg>
-<img src=j2.jpg>
+<img src=j2.png>
 
 ## jenkins installation in ubuntu
 
@@ -28,4 +28,4 @@ Update your local package index, then finally install Jenkins:
 http://IPAdress:8080
 
 
-<img src=j3.jpg>
+<img src=j3.png>
